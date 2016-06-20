@@ -5,7 +5,9 @@ namespace BusStop.Contracts
 {
     public class PlaceOrder : IMessage
     {
-        public Guid ProduictId { get; set; }
+        public Guid OrderId { get; set; }
+
+        public Guid ProductId { get; set; }
 
         public Guid CustomerId { get; set; }
 
