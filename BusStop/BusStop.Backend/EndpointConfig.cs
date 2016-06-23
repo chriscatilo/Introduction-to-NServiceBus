@@ -1,4 +1,3 @@
-
 namespace BusStop.Backend
 {
     using NServiceBus;
