@@ -20,6 +20,14 @@ namespace BusStop.Backend
 
                 return store;
             }, DependencyLifecycle.SingleInstance));
+
+            configuration.RegisterComponents(components => components.ConfigureComponent<IDocumentSession>((builder) =>
+            {
+                var documentStore = builder.Build<IDocumentStore>();
+
+                return documentStore.OpenSession();
+
+            }, DependencyLifecycle.InstancePerCall));
         }
     }
 }

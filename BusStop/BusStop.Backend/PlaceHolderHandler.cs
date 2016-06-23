@@ -9,18 +9,17 @@ namespace BusStop.Backend
     {
         public IDocumentStore Store { get; set; }
 
+        public IDocumentSession Session { get; set; }
+
         public void Handle(PlaceOrder message)
         {
 
-            using (var session = Store.OpenSession())
-            {
-                session.Store(new Order
+            Session.Store(new Order
                 {
                     OrderId = message.OrderId
                 });
 
-                session.SaveChanges();
-            }
+            Session.SaveChanges();
 
             Console.WriteLine("Order received " + message.OrderId);
         }
