@@ -27,7 +27,9 @@ namespace BusStop.Backend
 
                 return documentStore.OpenSession();
 
-            }, DependencyLifecycle.InstancePerCall));
+            }, DependencyLifecycle.InstancePerUnitOfWork));
+
+            configuration.RegisterComponents(components => components.ConfigureComponent<RavenUnitOfWork>(DependencyLifecycle.InstancePerUnitOfWork));
         }
     }
 }
