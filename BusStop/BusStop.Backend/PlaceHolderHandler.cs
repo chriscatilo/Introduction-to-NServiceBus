@@ -1,23 +1,18 @@
 ﻿using BusStop.Contracts;
 using NServiceBus;
-using Raven.Client.Document;
+using Raven.Client;
 using System;
 
 namespace BusStop.Backend
 {
     public class PlaceHolderHandler : IHandleMessages<PlaceOrder>
     {
+        public IDocumentStore Store { get; set; }
+
         public void Handle(PlaceOrder message)
         {
-            var store = new DocumentStore
-            {
-                Url = "http://localhost:8080",
-                DefaultDatabase = "Default"	// default database
-            };
 
-            store.Initialize();
-
-            using (var session = store.OpenSession())
+            using (var session = Store.OpenSession())
             {
                 session.Store(new Order
                 {
@@ -35,5 +30,4 @@ namespace BusStop.Backend
     {
         public Guid OrderId { get; set; }
     }
-
 }

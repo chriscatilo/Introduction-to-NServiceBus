@@ -60,6 +60,7 @@
     <Compile Include="PlaceHolderHandler.cs" />
     <Compile Include="EndpointConfig.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RavenBootstrapper.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
