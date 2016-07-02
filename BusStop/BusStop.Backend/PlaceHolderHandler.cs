@@ -1,6 +1,5 @@
 ﻿using BusStop.Contracts;
 using NServiceBus;
-using NServiceBus.UnitOfWork;
 using Raven.Client;
 using System;
 
@@ -18,26 +17,6 @@ namespace BusStop.Backend
                 });
 
             Console.WriteLine("Order received " + message.OrderId);
-        }
-    }
-
-    public class Order
-    {
-        public Guid OrderId { get; set; }
-    }
-
-    public class RavenUnitOfWork : IManageUnitsOfWork
-    { 
-        public IDocumentSession Session { get; set; }
-
-        public void Begin()
-        {
-        }
-
-        public void End(Exception ex = null)
-        {
-            if (ex != null) 
-                Session.SaveChanges();
         }
     }
 }
