@@ -24,8 +24,6 @@ namespace BusStop.API.Controllers
                 CustomerId = Guid.NewGuid(),
             };
             
-            _bus.SetMessageHeader(order, "access_token", accessToken);
-            
             _bus.Send(order);
 
             return order.OrderId;
