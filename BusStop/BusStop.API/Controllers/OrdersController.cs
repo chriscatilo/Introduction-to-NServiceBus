@@ -1,4 +1,5 @@
-﻿using BusStop.Contracts;
+﻿using BusStop.API.Models;
+using BusStop.Contracts;
 using NServiceBus;
 using System;
 using System.Web.Http;
@@ -8,14 +9,16 @@ namespace BusStop.API.Controllers
 {
     public class OrdersController : ApiController
     {
+        private readonly ISayHello _say;
         private ISendOnlyBus _bus;
 
-        public OrdersController()
+        public OrdersController(ISayHello say)
         {
+            _say = say;
             _bus = WebApiApplication.Bus;
         }
 
-        public Guid Get([ModelBinder(Name="access_token")]string accessToken = "")
+        public Result Get([ModelBinder(Name="access_token")]string accessToken = "")
         {
             var order = new PlaceOrder()
             {
@@ -26,7 +29,18 @@ namespace BusStop.API.Controllers
             
             _bus.Send(order);
 
-            return order.OrderId;
+            return new Result
+            {
+                Message = _say.Hello,
+                OrderId = order.OrderId 
+            };
+        }
+
+        public class Result
+        {
+            public string Message { get; set; }
+
+            public Guid OrderId { get; set; }    
         }
     }
 }
