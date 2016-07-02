@@ -23,6 +23,18 @@ namespace BusStop.Backend
             //http://docs.particular.net/nservicebus/persistence-order
 
             configuration.UsePersistence<InMemoryPersistence>();
+
+            ConfigureIoC(configuration);
+        }
+
+        private void ConfigureIoC(BusConfiguration busConfiguration)
+        {
+            var container = new StructureMap.Container(expression =>
+            {
+                expression.AddRegistry<DefaultRegistry>();
+            });
+
+            busConfiguration.UseContainer<StructureMapBuilder>(customizations => customizations.ExistingContainer(container));
         }
 
         // message processing pipeline ordering

@@ -1,4 +1,5 @@
-﻿using NServiceBus;
+﻿using BusStop.API.App_Start;
+using NServiceBus;
 using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
@@ -8,9 +9,6 @@ namespace BusStop.API
 {
     public class WebApiApplication : System.Web.HttpApplication
     {
-
-        public static ISendOnlyBus Bus { get; set; }
-
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();
@@ -26,9 +24,17 @@ namespace BusStop.API
         {
             var busConfiguration = new BusConfiguration();
             busConfiguration.UseSerialization<XmlSerializer>();
-            Bus = NServiceBus.Bus.CreateSendOnly(busConfiguration);
 
-            Bus.OutgoingHeaders["source"] = "BusStop.API";
+            var ioc = StructuremapMvc.StructureMapDependencyScope.Container;
+            busConfiguration.UseContainer<StructureMapBuilder>(customizations => customizations.ExistingContainer(ioc));
+
+            var sendOnlyBus = Bus.CreateSendOnly(busConfiguration);
+            sendOnlyBus.OutgoingHeaders["source"] = "BusStop.API";
+
+            ioc.Configure(expression =>
+            {
+                expression.For<ISendOnlyBus>().Use(sendOnlyBus);
+            });
         }
     }
 }

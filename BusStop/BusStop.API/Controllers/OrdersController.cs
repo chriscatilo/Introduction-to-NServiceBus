@@ -10,12 +10,12 @@ namespace BusStop.API.Controllers
     public class OrdersController : ApiController
     {
         private readonly ISayHello _say;
-        private ISendOnlyBus _bus;
+        private readonly ISendOnlyBus _bus;
 
-        public OrdersController(ISayHello say)
+        public OrdersController(ISayHello say, ISendOnlyBus bus)
         {
             _say = say;
-            _bus = WebApiApplication.Bus;
+            _bus = bus;
         }
 
         public Result Get([ModelBinder(Name="access_token")]string accessToken = "")

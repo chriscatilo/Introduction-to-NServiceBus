@@ -1,12 +1,17 @@
-﻿using System;
-using NServiceBus.UnitOfWork;
+﻿using NServiceBus.UnitOfWork;
 using Raven.Client;
+using System;
 
 namespace BusStop.Backend
 {
     public class RavenUnitOfWork : IManageUnitsOfWork
-    { 
-        public IDocumentSession Session { get; set; }
+    {
+        private readonly IDocumentSession _session;
+
+        public RavenUnitOfWork(IDocumentSession session)
+        {
+            _session = session;
+        }
 
         public void Begin()
         {
@@ -15,7 +20,7 @@ namespace BusStop.Backend
         public void End(Exception ex = null)
         {
             if (ex != null) 
-                Session.SaveChanges();
+                _session.SaveChanges();
         }
     }
 }

@@ -7,16 +7,24 @@ namespace BusStop.Backend
 {
     public class PlaceHolderHandler : IHandleMessages<PlaceOrder>
     {
-        public IDocumentSession Session { get; set; }
+        private readonly IDocumentSession _session;
+        private readonly ISayHello _say;
+
+        public PlaceHolderHandler(IDocumentSession session, ISayHello say)
+        {
+            _session = session;
+            _say = say;
+        }
 
         public void Handle(PlaceOrder message)
         {
-            Session.Store(new Order
+            _session.Store(new Order
                 {
                     OrderId = message.OrderId
                 });
 
             Console.WriteLine("Order received " + message.OrderId);
+            Console.WriteLine(_say.Hello);
         }
     }
 }
