@@ -1,12 +1,21 @@
 ﻿using BusStop.Contracts;
+using NServiceBus;
 using System;
 using System.Web.Http;
+using System.Web.Http.ModelBinding;
 
 namespace BusStop.API.Controllers
 {
     public class OrdersController : ApiController
     {
-        public Guid Get()
+        private ISendOnlyBus _bus;
+
+        public OrdersController()
+        {
+            _bus = WebApiApplication.Bus;
+        }
+
+        public Guid Get([ModelBinder(Name="access_token")]string accessToken = "")
         {
             var order = new PlaceOrder()
             {
@@ -14,8 +23,10 @@ namespace BusStop.API.Controllers
                 ProductId = Guid.NewGuid(),
                 CustomerId = Guid.NewGuid(),
             };
-
-            WebApiApplication.Bus.Send(order);
+            
+            _bus.SetMessageHeader(order, "access_token", accessToken);
+            
+            _bus.Send(order);
 
             return order.OrderId;
         }

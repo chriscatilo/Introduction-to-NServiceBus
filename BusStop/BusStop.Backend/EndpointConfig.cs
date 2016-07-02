@@ -1,12 +1,14 @@
 namespace BusStop.Backend
 {
+    using BusStop.Authentication;
     using NServiceBus;
 
     /*
 		This class configures this endpoint as a Server. More information about how to configure the NServiceBus host
 		can be found here: http://particular.net/articles/the-nservicebus-host
 	*/
-    public class EndpointConfig : IConfigureThisEndpoint, AsA_Server
+    public class EndpointConfig : IConfigureThisEndpoint, AsA_Server,
+        ISpecifyMessageHandlerOrdering // message processing pipeline ordering
     {
         public void Customize(BusConfiguration configuration)
         {
@@ -21,6 +23,12 @@ namespace BusStop.Backend
             //http://docs.particular.net/nservicebus/persistence-order
 
             configuration.UsePersistence<InMemoryPersistence>();
+        }
+
+        // message processing pipeline ordering
+        public void SpecifyOrder(NServiceBus.Order order)
+        {
+            order.SpecifyFirst<First<AutheticationHandler>>();
         }
     }
 }

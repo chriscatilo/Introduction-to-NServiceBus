@@ -27,6 +27,8 @@ namespace BusStop.API
             var busConfiguration = new BusConfiguration();
             busConfiguration.UseSerialization<XmlSerializer>();
             Bus = NServiceBus.Bus.CreateSendOnly(busConfiguration);
+
+            Bus.OutgoingHeaders["source"] = "BusStop.API";
         }
     }
 }
