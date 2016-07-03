@@ -1,4 +1,6 @@
-﻿using System.Windows;
+﻿using BusStop.Contracts;
+using System;
+using System.Windows;
 
 namespace BusStop.BackOffice
 {
@@ -10,6 +12,14 @@ namespace BusStop.BackOffice
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            App.Bus.Send(new CancelOrder
+            {
+                OrderId = Guid.NewGuid(),
+            });
         }
     }
 }
