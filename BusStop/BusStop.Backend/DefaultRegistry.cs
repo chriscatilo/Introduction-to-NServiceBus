@@ -18,7 +18,7 @@ namespace BusStop.Backend
 
             Scan(scans);
             
-            //For<IExample>().Use<Example>();
+            For<ICreditCardService>().Use<DefaultCreditCardService>();
         }
 
         #endregion

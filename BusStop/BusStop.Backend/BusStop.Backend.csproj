@@ -70,7 +70,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CancelOrderHandler.cs" />
+    <Compile Include="DefaultChargeCustomerHandler.cs" />
+    <Compile Include="DefaultCreditCardService.cs" />
     <Compile Include="DefaultRegistry.cs" />
+    <Compile Include="ICreditCardService.cs" />
     <Compile Include="Order.cs" />
     <Compile Include="PlaceHolderHandler.cs" />
     <Compile Include="EndpointConfig.cs" />
