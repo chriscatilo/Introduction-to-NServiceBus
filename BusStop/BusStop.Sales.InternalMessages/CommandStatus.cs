@@ -1,4 +1,4 @@
-﻿namespace BusStop.Contracts
+﻿namespace BusStop.Sales.InternalMessages
 {
     public enum CommandStatus
     {

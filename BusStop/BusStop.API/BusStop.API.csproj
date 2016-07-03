@@ -359,9 +359,9 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BusStop.Contracts\BusStop.Contracts.csproj">
-      <Project>{c79ada25-9604-4322-b8d8-7f49582ea453}</Project>
-      <Name>BusStop.Contracts</Name>
+    <ProjectReference Include="..\BusStop.Sales.InternalMessages\BusStop.Sales.InternalMessages.csproj">
+      <Project>{18A7666A-AF04-43A1-B1D3-BFDDC9453C75}</Project>
+      <Name>BusStop.Sales.InternalMessages</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

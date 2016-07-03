@@ -1,7 +1,7 @@
 ﻿using NServiceBus;
 using System;
 
-namespace BusStop.Contracts
+namespace BusStop.Sales.InternalMessages
 {
     public class CancelOrder : IMessage
     {

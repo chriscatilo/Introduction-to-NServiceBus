@@ -1,4 +1,4 @@
-﻿using BusStop.Billing.Contracts;
+﻿using BusStop.Billing.InternalMessages;
 using NServiceBus;
 
 namespace BusStop.Billing.CreditCardGateway

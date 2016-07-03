@@ -1,5 +1,5 @@
 ﻿using BusStop.API.Models;
-using BusStop.Contracts;
+using BusStop.Sales.InternalMessages;
 using NServiceBus;
 using System;
 using System.Web.Http;

@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C79ADA25-9604-4322-B8D8-7F49582EA453}</ProjectGuid>
+    <ProjectGuid>{18A7666A-AF04-43A1-B1D3-BFDDC9453C75}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BusStop.Contracts</RootNamespace>
-    <AssemblyName>BusStop.Contracts</AssemblyName>
+    <RootNamespace>BusStop.Sales.InternalMessages</RootNamespace>
+    <AssemblyName>BusStop.Sales.InternalMessages</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

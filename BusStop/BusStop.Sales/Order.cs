@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace BusStop.Backend
+namespace BusStop.Sales
 {
-    public class Order
+    class Order
     {
         public Guid OrderId { get; set; }
     }

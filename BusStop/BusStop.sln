@@ -5,8 +5,6 @@ VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusStop.API", "BusStop.API\BusStop.API.csproj", "{56615D59-366F-45D1-89DE-1501D63EBA55}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusStop.Contracts", "BusStop.Contracts\BusStop.Contracts.csproj", "{C79ADA25-9604-4322-B8D8-7F49582EA453}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusStop.Backend", "BusStop.Backend\BusStop.Backend.csproj", "{20517581-78CB-4695-B5CB-592DE4ED18C8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusStop.Authentication", "BusStop.Authentication\BusStop.Authentication.csproj", "{DA601F3A-0AA5-4A3B-A981-287BEE6CAD65}"
@@ -17,7 +15,21 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusStop.BackOffice", "BusSt
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusStop.Billing.CreditCardGateway", "BusStop.Billing.CreditCardGateway\BusStop.Billing.CreditCardGateway.csproj", "{27B479E0-C33D-4823-8EF8-0965DFD0E996}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusStop.Billing.Contracts", "BusStop.Billing.Contracts\BusStop.Billing.Contracts.csproj", "{0BE9628C-92BE-421C-BE2C-72F6DE2FB4EB}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Billing", "Billing", "{1F15252B-EAF5-4BA7-B9D3-A2FB013289C4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Contracts", "Contracts", "{FB81A85C-C487-4B0B-A7BD-360D24AFD8D3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{6F962C9C-121E-4B4C-99A1-F432167017F4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sales", "Sales", "{F53B7B56-0AAF-4E28-AD47-94633899C1C2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusStop.Sales.InternalMessages", "BusStop.Sales.InternalMessages\BusStop.Sales.InternalMessages.csproj", "{18A7666A-AF04-43A1-B1D3-BFDDC9453C75}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusStop.Sales", "BusStop.Sales\BusStop.Sales.csproj", "{7E9D67CA-2E6F-4878-A211-57C0A0B7CFB8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusStop.Billing", "BusStop.Billing\BusStop.Billing.csproj", "{9674803E-C54C-4376-B25E-9DBC1FE79BAC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusStop.Billing.InternalMessages", "BusStop.Billing.InternalMessages\BusStop.Billing.InternalMessages.csproj", "{8E9265DA-35F2-420D-B49B-DFEB6D7235E3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +41,6 @@ Global
 		{56615D59-366F-45D1-89DE-1501D63EBA55}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{56615D59-366F-45D1-89DE-1501D63EBA55}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{56615D59-366F-45D1-89DE-1501D63EBA55}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C79ADA25-9604-4322-B8D8-7F49582EA453}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C79ADA25-9604-4322-B8D8-7F49582EA453}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C79ADA25-9604-4322-B8D8-7F49582EA453}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C79ADA25-9604-4322-B8D8-7F49582EA453}.Release|Any CPU.Build.0 = Release|Any CPU
 		{20517581-78CB-4695-B5CB-592DE4ED18C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{20517581-78CB-4695-B5CB-592DE4ED18C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{20517581-78CB-4695-B5CB-592DE4ED18C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -53,12 +61,33 @@ Global
 		{27B479E0-C33D-4823-8EF8-0965DFD0E996}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{27B479E0-C33D-4823-8EF8-0965DFD0E996}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{27B479E0-C33D-4823-8EF8-0965DFD0E996}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0BE9628C-92BE-421C-BE2C-72F6DE2FB4EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0BE9628C-92BE-421C-BE2C-72F6DE2FB4EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0BE9628C-92BE-421C-BE2C-72F6DE2FB4EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0BE9628C-92BE-421C-BE2C-72F6DE2FB4EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{18A7666A-AF04-43A1-B1D3-BFDDC9453C75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18A7666A-AF04-43A1-B1D3-BFDDC9453C75}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18A7666A-AF04-43A1-B1D3-BFDDC9453C75}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18A7666A-AF04-43A1-B1D3-BFDDC9453C75}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E9D67CA-2E6F-4878-A211-57C0A0B7CFB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E9D67CA-2E6F-4878-A211-57C0A0B7CFB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E9D67CA-2E6F-4878-A211-57C0A0B7CFB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E9D67CA-2E6F-4878-A211-57C0A0B7CFB8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9674803E-C54C-4376-B25E-9DBC1FE79BAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9674803E-C54C-4376-B25E-9DBC1FE79BAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9674803E-C54C-4376-B25E-9DBC1FE79BAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9674803E-C54C-4376-B25E-9DBC1FE79BAC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E9265DA-35F2-420D-B49B-DFEB6D7235E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E9265DA-35F2-420D-B49B-DFEB6D7235E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E9265DA-35F2-420D-B49B-DFEB6D7235E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E9265DA-35F2-420D-B49B-DFEB6D7235E3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{DA601F3A-0AA5-4A3B-A981-287BEE6CAD65} = {6F962C9C-121E-4B4C-99A1-F432167017F4}
+		{304E7065-DE8B-420C-9A5C-9D1964E1672F} = {6F962C9C-121E-4B4C-99A1-F432167017F4}
+		{27B479E0-C33D-4823-8EF8-0965DFD0E996} = {1F15252B-EAF5-4BA7-B9D3-A2FB013289C4}
+		{18A7666A-AF04-43A1-B1D3-BFDDC9453C75} = {F53B7B56-0AAF-4E28-AD47-94633899C1C2}
+		{7E9D67CA-2E6F-4878-A211-57C0A0B7CFB8} = {F53B7B56-0AAF-4E28-AD47-94633899C1C2}
+		{9674803E-C54C-4376-B25E-9DBC1FE79BAC} = {1F15252B-EAF5-4BA7-B9D3-A2FB013289C4}
+		{8E9265DA-35F2-420D-B49B-DFEB6D7235E3} = {1F15252B-EAF5-4BA7-B9D3-A2FB013289C4}
 	EndGlobalSection
 EndGlobal

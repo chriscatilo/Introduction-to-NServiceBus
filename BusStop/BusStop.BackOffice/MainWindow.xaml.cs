@@ -1,7 +1,7 @@
-﻿using BusStop.Contracts;
-using NServiceBus;
+﻿using NServiceBus;
 using System;
 using System.Windows;
+using BusStop.Sales.InternalMessages;
 
 namespace BusStop.BackOffice
 {

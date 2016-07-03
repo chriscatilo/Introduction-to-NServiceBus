@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{0BE9628C-92BE-421C-BE2C-72F6DE2FB4EB}</ProjectGuid>
+    <ProjectGuid>{7E9D67CA-2E6F-4878-A211-57C0A0B7CFB8}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BusStop.Billing.Contracts</RootNamespace>
-    <AssemblyName>BusStop.Billing.Contracts</AssemblyName>
+    <RootNamespace>BusStop.Sales</RootNamespace>
+    <AssemblyName>BusStop.Sales</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -34,7 +34,16 @@
       <HintPath>..\packages\NServiceBus.5.2.14\lib\net45\NServiceBus.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Raven.Abstractions, Version=3.0.0.0, Culture=neutral, PublicKeyToken=37f41c7f99471593, processorArchitecture=MSIL">
+      <HintPath>..\packages\RavenDB.Client.3.0.30143\lib\net45\Raven.Abstractions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Raven.Client.Lightweight, Version=3.0.0.0, Culture=neutral, PublicKeyToken=37f41c7f99471593, processorArchitecture=MSIL">
+      <HintPath>..\packages\RavenDB.Client.3.0.30143\lib\net45\Raven.Client.Lightweight.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -44,12 +53,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ChargeCreditCard.cs" />
-    <Compile Include="CreditCardCharged.cs" />
+    <Compile Include="CancelOrderHandler.cs" />
+    <Compile Include="Order.cs" />
+    <Compile Include="PlaceHolderHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BusStop.Billing.InternalMessages\BusStop.Billing.InternalMessages.csproj">
+      <Project>{8E9265DA-35F2-420D-B49B-DFEB6D7235E3}</Project>
+      <Name>BusStop.Billing.InternalMessages</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BusStop.Sales.InternalMessages\BusStop.Sales.InternalMessages.csproj">
+      <Project>{18a7666a-af04-43a1-b1d3-bfddc9453c75}</Project>
+      <Name>BusStop.Sales.InternalMessages</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

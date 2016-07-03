@@ -1,8 +1,8 @@
-﻿using BusStop.Contracts;
+﻿using BusStop.Sales.InternalMessages;
 using NServiceBus;
 using System;
 
-namespace BusStop.Backend
+namespace BusStop.Sales
 {
     public class CancelOrderHandler : IHandleMessages<CancelOrder>
     {

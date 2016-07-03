@@ -1,7 +1,7 @@
-using NServiceBus;
 using System;
+using NServiceBus;
 
-namespace BusStop.Billing.Contracts
+namespace BusStop.Billing.InternalMessages
 {
     public class CreditCardCharged : IMessage
     {

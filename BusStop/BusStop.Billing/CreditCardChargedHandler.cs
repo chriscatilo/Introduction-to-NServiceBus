@@ -1,8 +1,8 @@
-using BusStop.Billing.Contracts;
+using BusStop.Billing.InternalMessages;
 using NServiceBus;
 using System;
 
-namespace BusStop.Backend
+namespace BusStop.Billing
 {
     public class CreditCardChargedHandler : IHandleMessages<CreditCardCharged>
     {
