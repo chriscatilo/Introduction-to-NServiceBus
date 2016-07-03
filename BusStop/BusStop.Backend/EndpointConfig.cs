@@ -1,3 +1,4 @@
+using BusStop.Config;
 using NServiceBus.Persistence;
 
 namespace BusStop.Backend
@@ -27,6 +28,8 @@ namespace BusStop.Backend
             // This now stores subcribers durably to raven db
 			configuration.UsePersistence<RavenDBPersistence>()
                 .DoNotSetupDatabasePermissions();
+
+		    configuration.SetupMessageConventions();
 
 			ConfigureIoC(configuration);
 		}
