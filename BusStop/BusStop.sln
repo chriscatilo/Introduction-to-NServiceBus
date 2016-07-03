@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusStop.Authentication", "B
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusStop.Config", "BusStop.Config\BusStop.Config.csproj", "{304E7065-DE8B-420C-9A5C-9D1964E1672F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusStop.BackOffice", "BusStop.BackOffice\BusStop.BackOffice.csproj", "{F9D5EF44-77E6-466B-AE81-8E3B4595EE26}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{304E7065-DE8B-420C-9A5C-9D1964E1672F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{304E7065-DE8B-420C-9A5C-9D1964E1672F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{304E7065-DE8B-420C-9A5C-9D1964E1672F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9D5EF44-77E6-466B-AE81-8E3B4595EE26}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9D5EF44-77E6-466B-AE81-8E3B4595EE26}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9D5EF44-77E6-466B-AE81-8E3B4595EE26}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9D5EF44-77E6-466B-AE81-8E3B4595EE26}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
