@@ -66,6 +66,10 @@
       <Project>{8E9265DA-35F2-420D-B49B-DFEB6D7235E3}</Project>
       <Name>BusStop.Billing.InternalMessages</Name>
     </ProjectReference>
+    <ProjectReference Include="..\BusStop.Sales.Contracts\BusStop.Sales.Contracts.csproj">
+      <Project>{5CDB35AD-D551-4B50-AAF4-D7E5229E09B7}</Project>
+      <Name>BusStop.Sales.Contracts</Name>
+    </ProjectReference>
     <ProjectReference Include="..\BusStop.Sales.InternalMessages\BusStop.Sales.InternalMessages.csproj">
       <Project>{18a7666a-af04-43a1-b1d3-bfddc9453c75}</Project>
       <Name>BusStop.Sales.InternalMessages</Name>

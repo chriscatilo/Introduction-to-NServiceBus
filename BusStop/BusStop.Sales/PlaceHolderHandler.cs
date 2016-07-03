@@ -1,4 +1,4 @@
-﻿using BusStop.Billing.InternalMessages;
+﻿using BusStop.Sales.Contracts;
 using BusStop.Sales.InternalMessages;
 using NServiceBus;
 using Raven.Client;
@@ -24,12 +24,14 @@ namespace BusStop.Sales
                     OrderId = message.OrderId
                 });
 
-
-            _bus.Send(new ChargeCreditCard
+            // This publisher looks at storage (ie. raven db) 
+            // for a list of subscribers of OrderAccepted messages 
+            _bus.Publish(new OrderAccepted
             {
                 CustomerId = message.CustomerId,
-                Amount = 100
+                OrderId = message.OrderId
             });
+
             Console.WriteLine("Order received " + message.OrderId);
         }
     }
