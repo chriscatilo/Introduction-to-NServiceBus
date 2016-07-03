@@ -1,4 +1,5 @@
 ﻿using BusStop.Contracts;
+using NServiceBus;
 using System;
 using System.Windows;
 
@@ -16,9 +17,16 @@ namespace BusStop.BackOffice
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            App.Bus.Send(new CancelOrder
+            var bus = App.Container.GetInstance<IBus>();
+
+            var callback = bus.Send(new CancelOrder
             {
                 OrderId = Guid.NewGuid(),
+            });
+
+            callback.Register<CommandStatus>(status =>
+            {
+                textBox.Text = status.ToString();
             });
         }
     }

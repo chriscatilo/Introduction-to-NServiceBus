@@ -69,6 +69,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CancelOrderHandler.cs" />
     <Compile Include="DefaultRegistry.cs" />
     <Compile Include="Order.cs" />
     <Compile Include="PlaceHolderHandler.cs" />

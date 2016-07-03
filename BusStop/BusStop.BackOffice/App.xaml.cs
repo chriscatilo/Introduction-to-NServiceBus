@@ -10,11 +10,11 @@ namespace BusStop.BackOffice
     /// </summary>
     public partial class App : Application
     {
-        public static ISendOnlyBus Bus { get; set; }
+        public static IContainer Container { get; set; }
 
         protected override void OnStartup(StartupEventArgs e)
         {
-            var iocContainer = new StructureMap.Container(expression =>
+            Container = new StructureMap.Container(expression =>
             {
                 expression.Scan(scanner =>
                 {
@@ -23,24 +23,29 @@ namespace BusStop.BackOffice
                 });
             });
 
-            StartBus(iocContainer);
+            StartBus();
 
             base.OnStartup(e);
         }
 
-        private static void StartBus(Container iocContainer)
+        private static void StartBus()
         {
             var busConfig = new BusConfiguration();
             
-            busConfig.UseContainer<StructureMapBuilder>(cc => cc.ExistingContainer(iocContainer));
+            busConfig.UseContainer<StructureMapBuilder>(cc => cc.ExistingContainer(Container));
             busConfig.UseTransport<MsmqTransport>();
             busConfig.UsePersistence<InMemoryPersistence>();
             busConfig.UseSerialization<XmlSerializer>();
+            
 
-            Bus = NServiceBus.Bus.CreateSendOnly(busConfig);
+            var bus = NServiceBus.Bus.Create(busConfig);
 
-            Bus.OutgoingHeaders["source"] = "BusStop.Backoffice";
-            Bus.OutgoingHeaders["access_token"] = "busstop";
+            bus.OutgoingHeaders["source"] = "BusStop.Backoffice";
+            bus.OutgoingHeaders["access_token"] = "busstop";
+
+            Container.Configure(expression => expression.For<IBus>().Use(bus));
+
+            bus.Start();
         }
     }
 }
