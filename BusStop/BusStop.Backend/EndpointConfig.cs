@@ -40,7 +40,7 @@ namespace BusStop.Backend
         // message processing pipeline ordering
         public void SpecifyOrder(NServiceBus.Order order)
         {
-            order.SpecifyFirst<First<AutheticationHandler>>();
+            order.SpecifyFirst<First<AuthenticationHandler>>();
         }
     }
 }

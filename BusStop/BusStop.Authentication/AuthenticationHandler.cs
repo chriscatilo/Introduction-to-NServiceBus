@@ -3,7 +3,7 @@ using System;
 
 namespace BusStop.Authentication
 {
-    public class AutheticationHandler : IHandleMessages<IMessage> // handle all messages
+    public class AuthenticationHandler : IHandleMessages<IMessage> // handle all messages
     {
         public IBus Bus { get; set; }
 
