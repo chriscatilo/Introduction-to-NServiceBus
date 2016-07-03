@@ -14,9 +14,13 @@ namespace BusStop.Billing.CreditCardGateway
             {
                 scan.TheCallingAssembly();
                 scan.WithDefaultConventions();
+
+                scan.Assembly("BusStop.Authentication");
             };
 
             Scan(scans);
+            
+            For<ICreditCardService>().Use<DefaultCreditCardService>();
         }
 
         #endregion

@@ -70,10 +70,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CancelOrderHandler.cs" />
-    <Compile Include="DefaultChargeCustomerHandler.cs" />
-    <Compile Include="DefaultCreditCardService.cs" />
+    <Compile Include="CreditCardChargedHandler.cs" />
     <Compile Include="DefaultRegistry.cs" />
-    <Compile Include="ICreditCardService.cs" />
     <Compile Include="Order.cs" />
     <Compile Include="PlaceHolderHandler.cs" />
     <Compile Include="EndpointConfig.cs" />
@@ -94,6 +92,10 @@
     <ProjectReference Include="..\BusStop.Authentication\BusStop.Authentication.csproj">
       <Project>{da601f3a-0aa5-4a3b-a981-287bee6cad65}</Project>
       <Name>BusStop.Authentication</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BusStop.Billing.Contracts\BusStop.Billing.Contracts.csproj">
+      <Project>{0BE9628C-92BE-421C-BE2C-72F6DE2FB4EB}</Project>
+      <Name>BusStop.Billing.Contracts</Name>
     </ProjectReference>
     <ProjectReference Include="..\BusStop.Config\BusStop.Config.csproj">
       <Project>{304e7065-de8b-420c-9a5c-9d1964e1672f}</Project>

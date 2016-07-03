@@ -15,6 +15,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusStop.Config", "BusStop.C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusStop.BackOffice", "BusStop.BackOffice\BusStop.BackOffice.csproj", "{F9D5EF44-77E6-466B-AE81-8E3B4595EE26}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusStop.Billing.CreditCardGateway", "BusStop.Billing.CreditCardGateway\BusStop.Billing.CreditCardGateway.csproj", "{27B479E0-C33D-4823-8EF8-0965DFD0E996}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusStop.Billing.Contracts", "BusStop.Billing.Contracts\BusStop.Billing.Contracts.csproj", "{0BE9628C-92BE-421C-BE2C-72F6DE2FB4EB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +49,14 @@ Global
 		{F9D5EF44-77E6-466B-AE81-8E3B4595EE26}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F9D5EF44-77E6-466B-AE81-8E3B4595EE26}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F9D5EF44-77E6-466B-AE81-8E3B4595EE26}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27B479E0-C33D-4823-8EF8-0965DFD0E996}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27B479E0-C33D-4823-8EF8-0965DFD0E996}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27B479E0-C33D-4823-8EF8-0965DFD0E996}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27B479E0-C33D-4823-8EF8-0965DFD0E996}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0BE9628C-92BE-421C-BE2C-72F6DE2FB4EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0BE9628C-92BE-421C-BE2C-72F6DE2FB4EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0BE9628C-92BE-421C-BE2C-72F6DE2FB4EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0BE9628C-92BE-421C-BE2C-72F6DE2FB4EB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

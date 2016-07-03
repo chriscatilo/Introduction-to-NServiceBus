@@ -60,8 +60,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChargeCreditCardHandler.cs" />
+    <Compile Include="DefaultCreditCardService.cs" />
     <Compile Include="DefaultRegistry.cs" />
     <Compile Include="EndpointConfig.cs" />
+    <Compile Include="ICreditCardService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -72,6 +75,10 @@
     <ProjectReference Include="..\BusStop.Authentication\BusStop.Authentication.csproj">
       <Project>{da601f3a-0aa5-4a3b-a981-287bee6cad65}</Project>
       <Name>BusStop.Authentication</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BusStop.Billing.Contracts\BusStop.Billing.Contracts.csproj">
+      <Project>{0be9628c-92be-421c-be2c-72f6de2fb4eb}</Project>
+      <Name>BusStop.Billing.Contracts</Name>
     </ProjectReference>
     <ProjectReference Include="..\BusStop.Config\BusStop.Config.csproj">
       <Project>{304e7065-de8b-420c-9a5c-9d1964e1672f}</Project>

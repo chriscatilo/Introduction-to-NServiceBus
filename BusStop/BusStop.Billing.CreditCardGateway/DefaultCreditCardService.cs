@@ -1,6 +1,6 @@
 using System;
 
-namespace BusStop.Backend
+namespace BusStop.Billing.CreditCardGateway
 {
     public class DefaultCreditCardService : ICreditCardService
     {
