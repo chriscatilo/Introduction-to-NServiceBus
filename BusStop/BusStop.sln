@@ -31,6 +31,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusStop.Billing", "BusStop.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusStop.Billing.InternalMessages", "BusStop.Billing.InternalMessages\BusStop.Billing.InternalMessages.csproj", "{8E9265DA-35F2-420D-B49B-DFEB6D7235E3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusStop.Sales.Contracts", "BusStop.Sales.Contracts\BusStop.Sales.Contracts.csproj", "{5CDB35AD-D551-4B50-AAF4-D7E5229E09B7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -77,6 +79,10 @@ Global
 		{8E9265DA-35F2-420D-B49B-DFEB6D7235E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8E9265DA-35F2-420D-B49B-DFEB6D7235E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8E9265DA-35F2-420D-B49B-DFEB6D7235E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5CDB35AD-D551-4B50-AAF4-D7E5229E09B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5CDB35AD-D551-4B50-AAF4-D7E5229E09B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5CDB35AD-D551-4B50-AAF4-D7E5229E09B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5CDB35AD-D551-4B50-AAF4-D7E5229E09B7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -89,5 +95,6 @@ Global
 		{7E9D67CA-2E6F-4878-A211-57C0A0B7CFB8} = {F53B7B56-0AAF-4E28-AD47-94633899C1C2}
 		{9674803E-C54C-4376-B25E-9DBC1FE79BAC} = {1F15252B-EAF5-4BA7-B9D3-A2FB013289C4}
 		{8E9265DA-35F2-420D-B49B-DFEB6D7235E3} = {1F15252B-EAF5-4BA7-B9D3-A2FB013289C4}
+		{5CDB35AD-D551-4B50-AAF4-D7E5229E09B7} = {FB81A85C-C487-4B0B-A7BD-360D24AFD8D3}
 	EndGlobalSection
 EndGlobal

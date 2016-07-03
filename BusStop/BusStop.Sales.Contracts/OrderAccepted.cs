@@ -3,7 +3,11 @@ using System;
 
 namespace BusStop.Sales.Contracts
 {
-    public class OrderAccepted : IMessage
+    // IEvent - Message must be published
+
+    // ICommand - Message must be sent to a specific receipient 
+
+    public class OrderAccepted : IEvent // Order accepted message should always be published
     {
         public Guid OrderId { get; set; }
 

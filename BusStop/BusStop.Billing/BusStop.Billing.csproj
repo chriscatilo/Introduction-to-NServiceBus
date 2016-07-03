@@ -34,6 +34,22 @@
       <HintPath>..\packages\NServiceBus.5.2.14\lib\net45\NServiceBus.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="NServiceBus.Host, Version=6.0.0.0, Culture=neutral, PublicKeyToken=9fc386479f8a226c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NServiceBus.Host.6.0.0\lib\net45\NServiceBus.Host.exe</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NServiceBus.ObjectBuilder.StructureMap, Version=5.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\NServiceBus.StructureMap.5.0.1\lib\net45\NServiceBus.ObjectBuilder.StructureMap.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="StructureMap, Version=3.0.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\structuremap.3.0.5.130\lib\net40\StructureMap.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="StructureMap.Net4, Version=3.0.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\structuremap.3.0.5.130\lib\net40\StructureMap.Net4.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -45,15 +61,31 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CreditCardChargedHandler.cs" />
+    <Compile Include="DefaultRegistry.cs" />
+    <Compile Include="EndpointConfig.cs" />
+    <Compile Include="OrderAcceptedHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BusStop.Authentication\BusStop.Authentication.csproj">
+      <Project>{da601f3a-0aa5-4a3b-a981-287bee6cad65}</Project>
+      <Name>BusStop.Authentication</Name>
+    </ProjectReference>
     <ProjectReference Include="..\BusStop.Billing.InternalMessages\BusStop.Billing.InternalMessages.csproj">
       <Project>{8E9265DA-35F2-420D-B49B-DFEB6D7235E3}</Project>
       <Name>BusStop.Billing.InternalMessages</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BusStop.Config\BusStop.Config.csproj">
+      <Project>{304e7065-de8b-420c-9a5c-9d1964e1672f}</Project>
+      <Name>BusStop.Config</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BusStop.Sales.Contracts\BusStop.Sales.Contracts.csproj">
+      <Project>{5cdb35ad-d551-4b50-aaf4-d7e5229e09b7}</Project>
+      <Name>BusStop.Sales.Contracts</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
@@ -64,4 +96,8 @@
   <Target Name="AfterBuild">
   </Target>
   -->
+  <PropertyGroup>
+    <StartAction>Program</StartAction>
+    <StartProgram>$(ProjectDir)$(OutputPath)NServiceBus.Host.exe</StartProgram>
+  </PropertyGroup>
 </Project>
